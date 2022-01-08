@@ -31,11 +31,6 @@ const ReactionSchema = new Schema(
 
 const ThoughtSchema = new Schema(
   {
-    // writtenBy
-    username: {
-      type: String,
-      required: true
-    },
     thoughtText: {
       type: String,
       required: true,
@@ -46,6 +41,11 @@ const ThoughtSchema = new Schema(
       type: Date,
       default: Date.now
       // get: (createdAtVal) => dateFormat(createdAtVal)
+    },
+    // writtenBy
+    username: {
+      type: String,
+      required: true
     },
     reactions: [ReactionSchema]
   },

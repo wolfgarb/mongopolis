@@ -13,6 +13,6 @@ const {
 router.route('/').get(getAllUsers).post(createUser);
 
 // delete/update routes
-router.route('/:id').get(getUserById).delete(deleteUser);
+router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
 module.exports = router;
