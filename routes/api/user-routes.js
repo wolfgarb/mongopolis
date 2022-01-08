@@ -3,7 +3,9 @@ const router = require('express').Router();
 // deconstruct and import all methods related to User
 const {
   getAllUsers,
+  getUserById,
   createUser,
+  updateUser,
   deleteUser
 } = require('../../controllers/user-controller');
 
@@ -11,6 +13,6 @@ const {
 router.route('/').get(getAllUsers).post(createUser);
 
 // delete/update routes
-router.route('/:id').delete(deleteUser);
+router.route('/:id').get(getUserById).delete(deleteUser);
 
 module.exports = router;
